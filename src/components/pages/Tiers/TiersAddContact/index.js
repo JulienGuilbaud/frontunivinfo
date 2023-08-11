@@ -18,7 +18,7 @@ export function TiersAddContact() {
     const doSearch = async () => {
         try {
             setContactData([]);
-            const address = "http://localhost:3000/api/contacts/all"
+            const address = "http://julienguilbaud-server.eddi.cloud:8080/api/contacts/all"
             const response = await fetch(address);
             const data = await response.json();
             setContactData(data);
@@ -55,7 +55,7 @@ export function TiersAddContact() {
         console.log(newObject);
 
         try {
-            const response = await fetch('http://localhost:3000/api/bind/create', {
+            const response = await fetch('http://julienguilbaud-server.eddi.cloud:8080/api/bind/create', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

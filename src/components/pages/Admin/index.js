@@ -10,7 +10,7 @@ export function Admin() {
 
   const dosearch = async () => {
     try {
-      const address = "http://localhost:3000/api/users/details";
+      const address = "http://julienguilbaud-server.eddi.cloud:8080/api/users/details";
       const response = await fetch(address);
       const data = await response.json();
       console.log(data);

@@ -22,7 +22,7 @@ export function CampaignHome() {
         setSearchResult([]);
 
         try {
-            const address = "http://localhost:3000/api/campaigns/" + searchValue;
+            const address = "http://julienguilbaud-server.eddi.cloud:8080/api/campaigns/" + searchValue;
             const response = await fetch(address);
             const data = await response.json();
             setSearchResult(data);

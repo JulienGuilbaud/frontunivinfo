@@ -63,7 +63,7 @@ export function TiersCreate() {
         console.log(newObject);
 
         try {
-            const response = await fetch('http://localhost:3000/api/tier/create', {
+            const response = await fetch('http://julienguilbaud-server.eddi.cloud:8080/api/tier/create', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

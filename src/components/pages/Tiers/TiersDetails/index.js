@@ -15,7 +15,7 @@ export function TiersDetails() {
     const doSearch = async () => {
         try {
             setTiersData([]);
-            const adresse = "http://localhost:3000/api/tier/details/" + params.id;
+            const adresse = "http://julienguilbaud-server.eddi.cloud:8080/api/tier/details/" + params.id;
             const response = await fetch(adresse);
             const data = await response.json();
             setTiersData(data);

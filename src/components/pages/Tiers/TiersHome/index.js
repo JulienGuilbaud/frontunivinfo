@@ -23,7 +23,7 @@ export function TiersHome() {
         setSearchResult([]);
 
         try {
-            const address = "http://localhost:3000/api/contacts/" + searchValue;
+            const address = "http://julienguilbaud-server.eddi.cloud:8080/api/contacts/" + searchValue;
             const response = await fetch(address);
             const data = await response.json();
             setSearchResult(data);
@@ -41,7 +41,7 @@ export function TiersHome() {
         setSearchResult([]);
 
         try {
-            const address = "http://localhost:3000/api/tiers/" + searchValue;
+            const address = "http://julienguilbaud-server.eddi.cloud:8080/api/tiers/" + searchValue;
             const response = await fetch(address);
             const data = await response.json();
             setSearchResult(data);

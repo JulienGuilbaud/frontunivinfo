@@ -12,7 +12,7 @@ export function UserUpdate() {
     const doSearchForGroup = async () => {
         try {
             setGroupeData([]);
-            const address = "http://localhost:3000/api/group/"
+            const address = "http://julienguilbaud-server.eddi.cloud:8080/api/group/"
             const response = await fetch(address);
             const data = await response.json();
             setGroupeData(data);
@@ -26,7 +26,7 @@ export function UserUpdate() {
     const doSearchForUser = async () => {
         try {
             setuserData([]);
-            const address = "http://localhost:3000/api/user/" + params.userid
+            const address = "http://julienguilbaud-server.eddi.cloud:8080/api/user/" + params.userid
             const response = await fetch(address);
             const data = await response.json();
             setuserData(data);
@@ -77,7 +77,7 @@ export function UserUpdate() {
 
 
         try {
-            const response = await fetch("http://localhost:3000/api/user/update/" + params.userid, {
+            const response = await fetch("http://julienguilbaud-server.eddi.cloud:8080/api/user/update/" + params.userid, {
                 method: 'PATCH',
                 headers: {
                     'Content-Type': 'application/json',

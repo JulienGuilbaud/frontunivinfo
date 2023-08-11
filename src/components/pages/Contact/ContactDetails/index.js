@@ -15,7 +15,7 @@ export function ContactDetails() {
     const doSearch = async () => {
         try {
             setcontactData([]);
-            const adresse = "http://localhost:3000/api/contact/details/" + params.id
+            const adresse = "http://julienguilbaud-server.eddi.cloud:8080/api/contact/details/" + params.id
             const response = await fetch(adresse);
             const data = await response.json();
             setcontactData(data);

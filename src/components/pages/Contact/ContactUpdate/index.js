@@ -15,7 +15,7 @@ export function ContactUpdate() {
     const doSearch = async () => {
         try {
             setContactData({});
-            const adresse = "http://localhost:3000/api/contact/details/" + params.contactId;
+            const adresse = "http://julienguilbaud-server.eddi.cloud:8080/api/contact/details/" + params.contactId;
             const response = await fetch(adresse);
             const data = await response.json();
             setContactData(data);
@@ -81,7 +81,7 @@ export function ContactUpdate() {
         
 
         try {
-            const response = await fetch (`http://localhost:3000/api/contact/update/`+ params.contactId, {
+            const response = await fetch (`http://julienguilbaud-server.eddi.cloud:8080/api/contact/update/`+ params.contactId, {
                 method: 'PATCH',
                 headers: {
                     'Content-Type': 'application/json',
@@ -111,7 +111,7 @@ export function ContactUpdate() {
 
     const doDelete = async () => {
         try {
-            await fetch(`http://localhost:3000/api/contact/delete/` + params.contactId, {method:'DELETE'});
+            await fetch(`http://julienguilbaud-server.eddi.cloud:8080/api/contact/delete/` + params.contactId, {method:'DELETE'});
             alert('Contact a été supprimé');
             window.location.replace(`http://localhost:1234/tiersHome`)
         }

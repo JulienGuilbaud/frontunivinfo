@@ -20,7 +20,7 @@ export function ExchangeCreate() {
     const doSearch = async () => {
         try {
             setexchangeData([]);
-            const address = "http://localhost:3000/api/contact/" + params.contactid
+            const address = "http://julienguilbaud-server.eddi.cloud:8080/api/contact/" + params.contactid
             const response = await fetch(address);
             const data = await response.json();
             setexchangeData(data);
@@ -57,7 +57,7 @@ export function ExchangeCreate() {
         console.log(newObject);
 
         try {
-            const response = await fetch('http://localhost:3000/api/exchange/create', {
+            const response = await fetch('http://julienguilbaud-server.eddi.cloud:8080/api/exchange/create', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
