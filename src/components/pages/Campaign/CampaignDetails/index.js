@@ -16,7 +16,7 @@ export function CampaignDetails() {
         try {
 
             setCampaignData([]);
-            const address = "https://dcb5-2a01-cb19-846-c300-8d4a-62a5-b80f-35c9.ngrok-free.app//api/campaigns/details/" + params.id;
+            const address = "https://dcb5-2a01-cb19-846-c300-8d4a-62a5-b80f-35c9.ngrok-free.app/api/campaigns/details/" + params.id;
             const response = await fetch(address);
             const data = await response.json();
             setCampaignData(data);

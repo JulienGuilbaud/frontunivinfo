@@ -16,7 +16,7 @@ export function TiersAddCampaigns() {
     const doSearch = async () => {
         try {
             setCampaignData([]);
-            const address = "https://dcb5-2a01-cb19-846-c300-8d4a-62a5-b80f-35c9.ngrok-free.app//api/campaigns/"
+            const address = "https://dcb5-2a01-cb19-846-c300-8d4a-62a5-b80f-35c9.ngrok-free.app/api/campaigns/"
             const response = await fetch(address);
             const data = await response.json();
             setCampaignData(data);
@@ -52,7 +52,7 @@ export function TiersAddCampaigns() {
         };
         
         try {
-            const response = await fetch('https://dcb5-2a01-cb19-846-c300-8d4a-62a5-b80f-35c9.ngrok-free.app//api/tierhascampaign/', {
+            const response = await fetch('https://dcb5-2a01-cb19-846-c300-8d4a-62a5-b80f-35c9.ngrok-free.app/api/tierhascampaign/', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
