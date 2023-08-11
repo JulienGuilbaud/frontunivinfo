@@ -69,7 +69,7 @@ export function TiersAddCampaigns() {
 
             alert(data.message);
 
-            window.location.replace(`http://localhost:1234/tiersDetails/` + params.tierid);
+            window.location.replace(`/tiersDetails/` + params.tierid);
         } catch (error) {
             const formMessages = document.getElementById('form-messages');
             formMessages.classList.add("error-message")

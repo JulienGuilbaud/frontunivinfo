@@ -77,7 +77,7 @@ export function UserCreate() {
 
             alert(data.message);
 
-            window.location.replace(`http://localhost:1234/administrateur` );
+            window.location.replace(`/administrateur` );
 
         } catch (error) {
             const formMessages = document.getElementById('form-messages');

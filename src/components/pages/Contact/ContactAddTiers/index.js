@@ -73,7 +73,7 @@ export function ContactAddTiers() {
 
             alert(data.message);
 
-            window.location.replace(`http://localhost:1234/contactDetails/` + params.contactId);
+            window.location.replace(`/contactDetails/` + params.contactId);
         } catch (error) {
             
             const formMessages = document.getElementById('form-messages');

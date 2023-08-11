@@ -80,7 +80,7 @@ export function TiersCreate() {
 
             alert(data.message);
 
-            window.location.replace('http://localhost:1234/tiersDetails/'+data.tier.id);
+            window.location.replace('/tiersDetails/'+data.tier.id);
         } catch (error) {
             const formMessages = document.getElementById('form-messages');
             formMessages.classList.add("error-message")

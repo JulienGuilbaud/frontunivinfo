@@ -51,7 +51,7 @@ export function Connexion() {
             console.log(data.token);
 
             alert(data.message);
-            window.location.replace("http://localhost:1234/home/");
+            window.location.replace("/home");
 
         } catch (error) {
             const formMessages = document.getElementById('form-messages');

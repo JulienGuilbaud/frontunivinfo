@@ -74,7 +74,7 @@ export function ExchangeCreate() {
 
             alert(data.message);
 
-            window.location.replace(`http://localhost:1234/exchangeDetails/` + params.contactid);
+            window.location.replace(`/exchangeDetails/` + params.contactid);
         } catch (error) {
             const formMessages = document.getElementById('form-messages');
             formMessages.classList.add("error-message")

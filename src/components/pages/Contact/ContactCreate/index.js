@@ -70,7 +70,7 @@ export function ContactCreate() {
 
             alert(data.message);
 
-            window.location.replace(`http://localhost:1234/contactDetails/` + data.contact.id);
+            window.location.replace(`/contactDetails/` + data.contact.id);
 
         } catch (error) {
             

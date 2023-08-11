@@ -99,7 +99,7 @@ export function ContactUpdate() {
             
             alert('Contact a été modifié');
     
-            window.location.replace(`http://localhost:1234/contactDetails/` + params.contactId);
+            window.location.replace(`/contactDetails/` + params.contactId);
         } catch (error) {
             
             const formMessages = document.getElementById('form-messages');
@@ -113,7 +113,7 @@ export function ContactUpdate() {
         try {
             await fetch(`http://julienguilbaud-server.eddi.cloud:8080/api/contact/delete/` + params.contactId, {method:'DELETE'});
             alert('Contact a été supprimé');
-            window.location.replace(`http://localhost:1234/tiersHome`)
+            window.location.replace(`/tiersHome`)
         }
         catch (error) {
             console.error(error); 

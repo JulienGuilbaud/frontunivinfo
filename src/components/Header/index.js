@@ -20,7 +20,7 @@ export function Header() {
                 try {
                         await localStorage.removeItem("token");
                         alert('Vous êtes bien déconnecté');
-                        window.location.replace(`http://localhost:1234/`)
+                        window.location.replace(`/`)
                 }
                 catch (error) {
                         console.error(error);

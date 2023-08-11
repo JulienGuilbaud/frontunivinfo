@@ -60,7 +60,7 @@ export function GroupeCreate() {
                     alert(data.message);
         
                     // Remplacez l'URL de redirection par celle souhaitée
-                    window.location.replace("http://localhost:1234/administrateur");
+                    window.location.replace("/administrateur");
         
                 } catch (error) {
                     const formMessages = document.getElementById('form-messages');

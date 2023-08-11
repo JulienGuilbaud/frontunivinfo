@@ -47,7 +47,7 @@ export function CampaignCreate() {
 
             alert(data.message);
 
-            window.location.replace(`http://localhost:1234/campaignDetails/` + data.campaign.id);
+            window.location.replace(`/campaignDetails/` + data.campaign.id);
         } catch (error) {
             const formMessage = document.getElementById('form-messages');
             formMessage.classList.add("error-message");

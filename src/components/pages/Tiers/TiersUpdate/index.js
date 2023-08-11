@@ -2,7 +2,7 @@ import { Header } from "../../../Header";
 import { Main } from "../../../Main";
 import { Footer } from "../../../Footer";
 import { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useParams,Navigate } from "react-router-dom";
 import { DeleteButton } from "../../../DeleteButton";
 
 export function TiersUpdate() {
@@ -107,7 +107,7 @@ export function TiersUpdate() {
 
             alert(data.message);
 
-            window.location.replace(`http://localhost:1234/tiersDetails/` + params.tierid);
+            window.location.replace(`/tiersDetails/` + params.tierid);
         } catch (error) {
             const formMessages = document.getElementById('form-messages');
             formMessages.classList.add("error-message")
@@ -119,7 +119,7 @@ export function TiersUpdate() {
         try {
             await fetch(`http://julienguilbaud-server.eddi.cloud:8080/api/tier/delete/` + params.tierid, { method: 'DELETE' });
             alert('Tiers supprimé');
-            window.location.replace(`http://localhost:1234/tiersHome/`)
+            window.location.replace(`/tiersHome`)
         }
         catch (error) {
             console.error(error);
