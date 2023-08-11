@@ -1,0 +1,94 @@
+.homeHeader-item-logo{
+    width: 10%;
+    margin-left: 43.5%;
+}
+
+// h2{
+//     color: #8b44ee;
+// }
+.homeMain-box{
+    margin-top: 2em;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.homeMain-card{
+    background-color: white;
+    font-size: 1.1em;
+    font-weight: bold;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    width: 30%;
+    height: 13rem;
+    margin: 1rem;
+    padding: 0.5rem;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px;
+    border-radius: 15px;
+}
+.homeMain-item-flexLogo{
+    display: flex;
+}
+.homeMain-item-image{
+	color: black;
+    box-shadow: 2px 5px 15px rgba(0, 0, 0, 0.313);
+    background-color: white;
+    border-radius: 9px;
+    width: 7em;
+    padding: 1rem;
+    margin: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 4px solid white;
+	transition: box-shadow 1.5s,transform 1.5s;
+}
+
+.homeMain-item-image:hover {
+	cursor: pointer;
+    box-shadow: 2.5px 9px 10px rgba(0, 0, 0, 0.765);
+    background-color: #F5F4FD;
+    transform: scale(1.2);
+    border: 4px solid #8b44ee;
+}
+
+// style generique 
+
+// .header-card{
+// 	width: 55%;
+//     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px;
+//     margin: 10% auto;
+//     background-color: var(--white-light);
+//     border-radius: 15px;
+// }
+.connexionHeader-item-logo{
+    text-align-last: center;
+}
+.connexion-box{
+    margin: 2rem;
+}
+.TitreUnConnexion{
+	text-align: center;
+}
+.TitreConnexion{
+	margin: 1rem;
+	text-align: center;
+}
+.main-cards{
+    display: flex;
+}
+.main-card-left{
+	color: white;
+background-image: url("https://cdn.discordapp.com/attachments/1101739977081094197/1127293380322394313/backgroundConnexion.jpg");
+background-repeat: no-repeat;
+background-size:cover;
+    width: 60%;
+	border-radius: 15px 0px 0px 15px;
+}
+.main-card-right{
+    width: 50%;
+}
+.text-card{
+	margin: 3rem 1rem;
+}

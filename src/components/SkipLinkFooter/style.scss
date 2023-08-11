@@ -1,0 +1,10 @@
+.skiplink-footer a {
+    display: inline-block;
+    position: absolute;
+    left: -99999rem;
+    z-index: 100;
+}
+
+.skiplink-footer a:focus {
+    left: 0;
+}

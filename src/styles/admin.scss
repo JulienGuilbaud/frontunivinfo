@@ -1,0 +1,53 @@
+@use'./color.scss';
+
+h1 {
+    margin-bottom: 20px;
+}
+
+.container-admin {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.box-admin {
+    background-color: color.$primary-color;
+    color: color.$color-white ;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0,0.1);
+    width: 300px;
+    margin-bottom: 20 px;
+}
+
+h2 {
+     font-size: 24px;
+     font-weight: bold;
+     margin-bottom: 10px;
+}
+
+.card-admin {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.item-admin {
+    margin-bottom: 10px;
+    & strong {
+        font-weight: bold;
+    }
+ul {
+    margin-top: 10px;
+    list-style-type: none;
+    padding-left: 20px;
+}
+
+li {
+    margin-bottom: 5px;
+}
+}
+
+
+

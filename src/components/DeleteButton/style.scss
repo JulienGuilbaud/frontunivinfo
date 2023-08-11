@@ -1,0 +1,37 @@
+@use '../../styles/color.scss';
+
+.delete-button-contenair {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.delete-button-item {
+    background-color:color.$warning-background-color;
+    color:white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+.container-btn-suppress {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.item-btn-supress {
+    background-color:color.$warning-background-color;
+    color:white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+ 

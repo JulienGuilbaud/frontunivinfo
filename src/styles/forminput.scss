@@ -1,0 +1,45 @@
+@use'./color.scss';
+   
+.formInput-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  .formInput-box {
+    border: 1px solid color.$primary-color;
+    padding: 20px;
+    background-color: color.$light-background;
+  }
+
+.formInput-card {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+}
+
+.formInput-item {
+    padding: 10px;
+    border: 1px solid color.$primary-color;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.formSearch-item-button {
+    background-color: color.$primary-color;
+    color: color.$light-text;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+
+
+
+
+
+
+

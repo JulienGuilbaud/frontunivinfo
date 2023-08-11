@@ -1,0 +1,13 @@
+.skip-link a:focus{
+    /* position: absolute;
+    transform: translateY(0%)!important;*/
+    transition: transform ;
+} 
+
+.skip-link a:not(:focus){
+    display: inline-block !important;
+    position: absolute !important;
+    transform: translateY(-260%) !important;
+    opacity: 0;
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}

@@ -1,0 +1,55 @@
+@use'./color.scss';
+
+.main-container {
+    padding: 20px;
+    background-color: color.$background-color;
+    color: color.$text-color;
+}
+
+.main-box {
+    border: 1px solid color.$primary-color;
+    border-radius: 5px;
+}
+
+.details-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+     
+}
+
+.details-box {
+    
+    width: 100%;
+    margin-top: 20px;
+    padding: 20px;
+    background-color: color.$background-color;
+    // color: color.$contrast-color;     
+    
+}
+
+.details-box-title {
+    margin-bottom: 5px;
+    margin-top: 10px;
+    color: color.$primary-color;
+      
+}
+
+.details-card {
+     list-style: none;
+    padding: 0;
+     
+}
+
+.details-item {
+     margin-bottom: 10px;
+     color: color.$text-color;
+}
+
+.skiplink-footer {
+    color: color.$primary-color;
+}
+
+.button-item {
+    color:color.$primary-color;
+}

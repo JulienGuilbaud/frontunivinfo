@@ -1,0 +1,69 @@
+@use'./color.scss';
+
+img {
+    max-width: 100%;
+}  
+video {
+    max-width: 100%;
+}
+
+body {
+    
+    margin: 1rem;
+    box-sizing: border-box;
+}
+
+a{
+    margin: 0.5em;
+    padding: 1rem;
+    text-decoration: none;
+    color:color.$primary-color;
+}
+
+label {
+    margin-right: 0.5em;
+}
+
+h1 {
+    font-size: 2.5em;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid color.$primary-color;
+}
+
+h2 {
+    font-size: 2em;
+    padding: 0.8rem;
+    // border-bottom: 1px solid #ab81e5;
+    // border-top: 1px solid #ab81e5;
+}
+
+h3 {
+    font-size: 1.5em;
+}
+
+legend {
+    background-color: color.$primary-color;
+    border-radius: 10px;
+    padding: 0.6em;
+    margin-left: 2rem;
+    font-size: 1.3em;
+    
+}
+
+*:focus-visible{
+    transform: scale(1.2);
+    outline: 4px solid color.$color-grenn;
+    font-size: 1.3em;
+}
+.error-message{
+    background-color: color.$warning-background-color;
+    background-image: url('./images/warning.jpg');
+    background-position: right;
+    background-size: contain;
+    background-repeat: no-repeat;
+    color: color.$color-white;
+    font-weight: bolder;
+    padding: 1.5rem;
+    padding-right: 8rem;
+    border-radius: 0rem 1.5rem 0rem 1.5rem;
+}
