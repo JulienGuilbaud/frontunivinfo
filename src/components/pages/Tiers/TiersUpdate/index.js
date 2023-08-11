@@ -15,7 +15,7 @@ export function TiersUpdate() {
     const doSearch = async () => {
         try {
             setTiersData({});
-            const adresse = "http://julienguilbaud-server.eddi.cloud:8080/api/tier/details/" + params.tierid;
+            const adresse = "https://dcb5-2a01-cb19-846-c300-8d4a-62a5-b80f-35c9.ngrok-free.app//api/tier/details/" + params.tierid;
             const response = await fetch(adresse);
             const data = await response.json();
             setTiersData(data);
@@ -90,7 +90,7 @@ export function TiersUpdate() {
         console.log(newObject);
 
         try {
-            const response = await fetch(`http://julienguilbaud-server.eddi.cloud:8080/api/tier/update/` + params.tierid, {
+            const response = await fetch(`https://dcb5-2a01-cb19-846-c300-8d4a-62a5-b80f-35c9.ngrok-free.app//api/tier/update/` + params.tierid, {
                 method: 'PATCH',
                 headers: {
                     'Content-Type': 'application/json',
@@ -117,7 +117,7 @@ export function TiersUpdate() {
 
     const doDelete = async () => {
         try {
-            await fetch(`http://julienguilbaud-server.eddi.cloud:8080/api/tier/delete/` + params.tierid, { method: 'DELETE' });
+            await fetch(`https://dcb5-2a01-cb19-846-c300-8d4a-62a5-b80f-35c9.ngrok-free.app//api/tier/delete/` + params.tierid, { method: 'DELETE' });
             alert('Tiers supprimé');
             window.location.replace(`/tiersHome`)
         }

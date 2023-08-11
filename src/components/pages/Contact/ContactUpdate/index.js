@@ -15,7 +15,7 @@ export function ContactUpdate() {
     const doSearch = async () => {
         try {
             setContactData({});
-            const adresse = "http://julienguilbaud-server.eddi.cloud:8080/api/contact/details/" + params.contactId;
+            const adresse = "https://dcb5-2a01-cb19-846-c300-8d4a-62a5-b80f-35c9.ngrok-free.app//api/contact/details/" + params.contactId;
             const response = await fetch(adresse);
             const data = await response.json();
             setContactData(data);
@@ -81,7 +81,7 @@ export function ContactUpdate() {
         
 
         try {
-            const response = await fetch (`http://julienguilbaud-server.eddi.cloud:8080/api/contact/update/`+ params.contactId, {
+            const response = await fetch (`https://dcb5-2a01-cb19-846-c300-8d4a-62a5-b80f-35c9.ngrok-free.app//api/contact/update/`+ params.contactId, {
                 method: 'PATCH',
                 headers: {
                     'Content-Type': 'application/json',
@@ -111,7 +111,7 @@ export function ContactUpdate() {
 
     const doDelete = async () => {
         try {
-            await fetch(`http://julienguilbaud-server.eddi.cloud:8080/api/contact/delete/` + params.contactId, {method:'DELETE'});
+            await fetch(`https://dcb5-2a01-cb19-846-c300-8d4a-62a5-b80f-35c9.ngrok-free.app//api/contact/delete/` + params.contactId, {method:'DELETE'});
             alert('Contact a été supprimé');
             window.location.replace(`/tiersHome`)
         }

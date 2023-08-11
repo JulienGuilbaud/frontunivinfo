@@ -12,7 +12,7 @@ export function UserUpdate() {
     const doSearchForGroup = async () => {
         try {
             setGroupeData([]);
-            const address = "http://julienguilbaud-server.eddi.cloud:8080/api/group/"
+            const address = "https://dcb5-2a01-cb19-846-c300-8d4a-62a5-b80f-35c9.ngrok-free.app//api/group/"
             const response = await fetch(address);
             const data = await response.json();
             setGroupeData(data);
@@ -26,7 +26,7 @@ export function UserUpdate() {
     const doSearchForUser = async () => {
         try {
             setuserData([]);
-            const address = "http://julienguilbaud-server.eddi.cloud:8080/api/user/" + params.userid
+            const address = "https://dcb5-2a01-cb19-846-c300-8d4a-62a5-b80f-35c9.ngrok-free.app//api/user/" + params.userid
             const response = await fetch(address);
             const data = await response.json();
             setuserData(data);
@@ -77,7 +77,7 @@ export function UserUpdate() {
 
 
         try {
-            const response = await fetch("http://julienguilbaud-server.eddi.cloud:8080/api/user/update/" + params.userid, {
+            const response = await fetch("https://dcb5-2a01-cb19-846-c300-8d4a-62a5-b80f-35c9.ngrok-free.app//api/user/update/" + params.userid, {
                 method: 'PATCH',
                 headers: {
                     'Content-Type': 'application/json',

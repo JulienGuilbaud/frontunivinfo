@@ -21,7 +21,7 @@ export function ExchangeHome() {
         setSearchResult([]);
 
         try {
-            const address = "http://julienguilbaud-server.eddi.cloud:8080/api/contacts/" + searchValue;
+            const address = "https://dcb5-2a01-cb19-846-c300-8d4a-62a5-b80f-35c9.ngrok-free.app//api/contacts/" + searchValue;
             const response = await fetch(address);
             const data = await response.json();
             setSearchResult(data);
