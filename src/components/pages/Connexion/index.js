@@ -1,5 +1,6 @@
-import { LinkButton } from "../../LinkButton"
+
 import { useState } from "react";
+import { Navigate } from "react-router-dom";
 
 export function Connexion() {
     const [formData, setFormData] = useState({
