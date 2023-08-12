@@ -30,7 +30,7 @@ import { Admin } from '../pages/Admin';
 import { TiersAddContact } from "../pages/Tiers/TiersAddContact";
 import { ContactAddTiers } from "../pages/Contact/ContactAddTiers";
 import { TiersAddCampaigns } from "../pages/Tiers/TiersAddCampaign";
-import { RequireAuth } from "../RequireAuth";
+
 
 export function App() {
     return (
@@ -39,9 +39,7 @@ export function App() {
                 <BrowserRouter>
                     <Routes>
                         <Route path="/" element={<Connexion />} />
-{/*                     </Routes>
-                    <RequireAuth>
-                        <Routes> */}
+
                             <Route path='/home' element={<Home />} />
 
                             <Route path='/tiersHome' element={<TiersHome />} />
@@ -79,8 +77,6 @@ export function App() {
 
                             <Route path='/*' element={<Error />} />
                         </Routes>
-                   {/*  </RequireAuth> */}
-
                 </BrowserRouter >
             </AuthProvider>
         </>
