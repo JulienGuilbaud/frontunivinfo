@@ -51,7 +51,8 @@ export function Connexion() {
             console.log(data.token);
 
             alert(data.message);
-            window.location.replace("/home");
+            //window.location.replace("/home");
+            <Navigate to="/home" replace={true} />
 
         } catch (error) {
             const formMessages = document.getElementById('form-messages');
