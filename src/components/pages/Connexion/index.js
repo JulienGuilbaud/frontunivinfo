@@ -1,8 +1,11 @@
 
 import { useState } from "react";
-import { Navigate } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 
 export function Connexion() {
+
+    const history = useHistory();
+
     const [formData, setFormData] = useState({
         password: "",
         email: ""
@@ -52,8 +55,9 @@ export function Connexion() {
             console.log(data.token);
 
             alert(data.message);
-            //window.location.replace("/home");
-            <Navigate to="/home" replace={true} />
+            //window.location.replace("/home"); fonctionne en local mais pas sur vercel ou autre ...
+            //<Navigate to="/home" replace={true} /> idem
+            history.push("/home"); // Redirection à l'aide de React Router
 
         } catch (error) {
             const formMessages = document.getElementById('form-messages');
