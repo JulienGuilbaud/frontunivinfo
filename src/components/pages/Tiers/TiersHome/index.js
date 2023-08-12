@@ -23,7 +23,7 @@ export function TiersHome() {
         setSearchResult([]);
 
         try {
-            const address = "https://dcb5-2a01-cb19-846-c300-8d4a-62a5-b80f-35c9.ngrok-free.app/api/contacts/" + searchValue;
+            const address = "https://guilbaud.alwaysdata.net/api/contacts/" + searchValue;
             const response = await fetch(address);
             const data = await response.json();
             setSearchResult(data);
@@ -41,7 +41,7 @@ export function TiersHome() {
         setSearchResult([]);
 
         try {
-            const address = "https://dcb5-2a01-cb19-846-c300-8d4a-62a5-b80f-35c9.ngrok-free.app/api/tiers/" + searchValue;
+            const address = "https://guilbaud.alwaysdata.net/api/tiers/" + searchValue;
             const response = await fetch(address);
             const data = await response.json();
             setSearchResult(data);

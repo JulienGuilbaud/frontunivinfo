@@ -22,7 +22,7 @@ export function CampaignHome() {
         setSearchResult([]);
 
         try {
-            const address = "https://dcb5-2a01-cb19-846-c300-8d4a-62a5-b80f-35c9.ngrok-free.app/api/campaigns/" + searchValue;
+            const address = "https://guilbaud.alwaysdata.net/api/campaigns/" + searchValue;
             const response = await fetch(address);
             const data = await response.json();
             setSearchResult(data);

@@ -20,7 +20,7 @@ export function ExchangeCreate() {
     const doSearch = async () => {
         try {
             setexchangeData([]);
-            const address = "https://dcb5-2a01-cb19-846-c300-8d4a-62a5-b80f-35c9.ngrok-free.app/api/contact/" + params.contactid
+            const address = "https://guilbaud.alwaysdata.net/api/contact/" + params.contactid
             const response = await fetch(address);
             const data = await response.json();
             setexchangeData(data);
@@ -57,7 +57,7 @@ export function ExchangeCreate() {
         console.log(newObject);
 
         try {
-            const response = await fetch('https://dcb5-2a01-cb19-846-c300-8d4a-62a5-b80f-35c9.ngrok-free.app/api/exchange/create', {
+            const response = await fetch('https://guilbaud.alwaysdata.net/api/exchange/create', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

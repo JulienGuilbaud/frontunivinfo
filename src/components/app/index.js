@@ -37,9 +37,9 @@ export function App() {
                 <BrowserRouter>
                     <Routes>
                         <Route path="/" element={<Connexion />} />
-                    </Routes>
+{/*                     </Routes>
                     <RequireAuth>
-                        <Routes>
+                        <Routes> */}
                             <Route path='/home' element={<Home />} />
 
                             <Route path='/tiersHome' element={<TiersHome />} />
@@ -77,7 +77,7 @@ export function App() {
 
                             <Route path='/*' element={<Error />} />
                         </Routes>
-                    </RequireAuth>
+                   {/*  </RequireAuth> */}
 
                 </BrowserRouter >
             </AuthProvider>
