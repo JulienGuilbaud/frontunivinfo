@@ -69,7 +69,7 @@ legend {
 }
 .good-message{
     background-color: color.$good-background-color;
-    background-image: url('./images/warning.jpg');
+    background-image:  url('./images/correct.png');
     background-position: right;
     background-size: contain;
     background-repeat: no-repeat;
@@ -80,4 +80,7 @@ legend {
     border-radius: 0rem 1.5rem 0rem 1.5rem;
  
 }
-
+.invisible-link{
+    background-color: red;
+    display: none;
+}

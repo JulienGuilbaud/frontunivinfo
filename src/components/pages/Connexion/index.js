@@ -6,8 +6,7 @@ import { Link } from "react-router-dom";
 
 
 export function Connexion() {
-
-
+    const [formAlert, setFormAlert] = useState(false)
 
     const [formData, setFormData] = useState({
         password: "",
@@ -31,6 +30,7 @@ export function Connexion() {
     //fonction qui creer et envérra notre objet dans notre instance backend()
     const handleSubmit = async (event) => {
         event.preventDefault();
+        setFormAlert(false)
         const newObject = {
             password: formData.password,
             email: formData.email
@@ -63,22 +63,11 @@ export function Connexion() {
             const formMessages = document.getElementById('form-messages');
             formMessages.classList.toggle("good-message")
             formMessages.innerText = data.message;
-            // Créer un lien vers l'accueil
-            const homeLink = document.createElement('a');
-            homeLink.href = "/home"; // Remplacez par le chemin correct 
-            homeLink.textContent = 'Vers l\'accueil';
-            formMessages.appendChild(homeLink);
-
-
-
-
-
+            setFormAlert(true)
         } catch (error) {
             const formMessages = document.getElementById('form-messages');
             formMessages.classList.toggle("error-message")
             formMessages.innerText = error;
-
-
         }
     };
     return (
@@ -96,7 +85,7 @@ export function Connexion() {
                         <fieldset className="formInput-box">
                             <legend> formulaire de connexion </legend>
                             <div aria-live="polite" id="form-messages" className="">
-                                
+                                {formAlert && <Link to={"/home"}>Allez vers Accueil</Link>}
                             </div>
                             <label className="formInput-card">
                                 Email :
