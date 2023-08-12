@@ -1,6 +1,9 @@
 
 import { useState } from "react";
 
+import { Link } from "react-router-dom";
+
+
 
 export function Connexion() {
 
@@ -52,17 +55,30 @@ export function Connexion() {
 
             // Pour enregistrer le token dans le LocalStorage après la connexion
             localStorage.setItem("token", data.token);
-            console.log(data.token);
 
-            alert(data.message);
-            window.location.replace("/home"); //fonctionne en local mais pas sur vercel ou autre ...
-            
-            
+
+            //alert(data.message);
+            //window.location.replace("/home");
+            //fonctionne en local mais pas sur vercel ou autre ...
+            const formMessages = document.getElementById('form-messages');
+            formMessages.classList.toggle("good-message")
+            formMessages.innerText = data.message;
+            // Créer un lien vers l'accueil
+            const homeLink = document.createElement('a');
+            homeLink.href = "/home"; // Remplacez par le chemin correct 
+            homeLink.textContent = 'Vers l\'accueil';
+            formMessages.appendChild(homeLink);
+
+
+
+
 
         } catch (error) {
             const formMessages = document.getElementById('form-messages');
-            formMessages.classList.add("error-message")
+            formMessages.classList.toggle("error-message")
             formMessages.innerText = error;
+
+
         }
     };
     return (
@@ -79,7 +95,9 @@ export function Connexion() {
                     <form onSubmit={handleSubmit} className="formInput-container">
                         <fieldset className="formInput-box">
                             <legend> formulaire de connexion </legend>
-                            <div aria-live="polite" id="form-messages" className=""></div>
+                            <div aria-live="polite" id="form-messages" className="">
+                                
+                            </div>
                             <label className="formInput-card">
                                 Email :
                                 <input required type="mail" name="email" value={formData.email} onChange={handleChange} className="formInput-item" />

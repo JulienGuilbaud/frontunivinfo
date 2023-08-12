@@ -67,3 +67,17 @@ legend {
     padding-right: 8rem;
     border-radius: 0rem 1.5rem 0rem 1.5rem;
 }
+.good-message{
+    background-color: color.$good-background-color;
+    background-image: url('./images/warning.jpg');
+    background-position: right;
+    background-size: contain;
+    background-repeat: no-repeat;
+    color: color.$color-white;
+    font-weight: bolder;
+    padding: 1.5rem;
+    padding-right: 8rem;
+    border-radius: 0rem 1.5rem 0rem 1.5rem;
+ 
+}
+
