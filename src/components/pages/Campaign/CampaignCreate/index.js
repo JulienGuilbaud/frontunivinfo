@@ -4,6 +4,7 @@ import { Header } from "../../../Header";
 import { Main } from "../../../Main";
 
 export function CampaignCreate() {
+    const [formAlert, setFormAlert] = useState(false)
     const [formData, setFormData] = useState({
         name: "",
         description: "",
@@ -45,9 +46,11 @@ export function CampaignCreate() {
 
             const data = await response.json();
 
-            alert(data.message);
+            const formMessages = document.getElementById('form-messages');
+            formMessages.classList.toggle("good-message")
+            formMessages.innerText = data.message;
+            setFormAlert(true)
 
-            window.location.replace(`/campaignDetails/` + data.campaign.id);
         } catch (error) {
             const formMessage = document.getElementById('form-messages');
             formMessage.classList.add("error-message");
@@ -62,7 +65,9 @@ export function CampaignCreate() {
                 <form onSubmit={handleSubmit} className="formInput-container">
                     <fieldset className="formInput-box">
                         <legend> Création d'une campagne </legend>
-                        <div aria-live="polite" id="form-messages" className=""></div>
+                        <div aria-live="polite" id="form-messages" className="">
+                        {formAlert && <Link to={"/campaignDetails/"+data.campaign.id}>Allez vers la campagne</Link>}
+                        </div>
                         <label className="formInput-card">
                             Nom de la campagne :
                             <input type="text" name="name" value={formData.name} onChange={handleChange} className="formInput-item" />

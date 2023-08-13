@@ -56,10 +56,8 @@ export function Connexion() {
             // Pour enregistrer le token dans le LocalStorage après la connexion
             localStorage.setItem("token", data.token);
 
-
-            //alert(data.message);
-            //window.location.replace("/home");
-            //fonctionne en local mais pas sur vercel ou autre ...
+            //window.location.replace("/home");//fonctionne en local mais pas sur vercel ou autre ...
+            
             const formMessages = document.getElementById('form-messages');
             formMessages.classList.toggle("good-message")
             formMessages.innerText = data.message;
