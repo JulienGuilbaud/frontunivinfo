@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 
 export function CampaignCreate() {
     const [formAlert, setFormAlert] = useState(false)
+    const [newForm,setNewForm]=useState({})
     const [formData, setFormData] = useState({
         name: "",
         description: "",
@@ -47,9 +48,10 @@ export function CampaignCreate() {
 
             const data = await response.json();
 
+            setNewForm(data)
             const formMessages = document.getElementById('form-messages');
             formMessages.classList.toggle("good-message")
-            formMessages.innerText = data.message;
+            formMessages.innerText = newForm.message;
             setFormAlert(true)
 
         } catch (error) {
@@ -67,7 +69,7 @@ export function CampaignCreate() {
                     <fieldset className="formInput-box">
                         <legend> Création d'une campagne </legend>
                         <div aria-live="polite" id="form-messages" className="">
-                        {formAlert && <Link to={"/campaignDetails/"+data.campaign.id}>Allez vers la campagne</Link>}
+                        {formAlert && <Link to={"/campaignDetails/"+newForm.campaign.id}>Allez vers la campagne</Link>}
                         </div>
                         <label className="formInput-card">
                             Nom de la campagne :
