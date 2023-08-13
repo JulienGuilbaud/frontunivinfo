@@ -22,7 +22,7 @@ export function ContactAddTiers() {
             const response = await fetch(address);
             const data = await response.json();
             setTierData(data);
-            console.log(data);
+            
         } catch (error) {
             console.error(error);
             alert('Erreur lors de la récupération des résultats');
@@ -52,7 +52,7 @@ export function ContactAddTiers() {
             ContactId: formData.ContactId
 
         };
-        console.log(newObject);
+        
 
          try {
             const response = await fetch('https://guilbaud.alwaysdata.net/api/bind/create', {

@@ -24,7 +24,7 @@ export function ExchangeCreate() {
             const response = await fetch(address);
             const data = await response.json();
             setexchangeData(data);
-            console.log(data);
+            
         } catch (error) {
             console.error(error);
             alert('Erreur lors de la récupération des résultats');
@@ -54,7 +54,7 @@ export function ExchangeCreate() {
             content: formData.content,
 
         };
-        console.log(newObject);
+        
 
         try {
             const response = await fetch('https://guilbaud.alwaysdata.net/api/exchange/create', {

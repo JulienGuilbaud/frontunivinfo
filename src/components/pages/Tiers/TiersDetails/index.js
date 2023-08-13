@@ -19,7 +19,7 @@ export function TiersDetails() {
             const response = await fetch(adresse);
             const data = await response.json();
             setTiersData(data);
-            console.log(data);
+            
 
         } catch (error) {
             console.error(error);

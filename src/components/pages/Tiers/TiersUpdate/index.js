@@ -87,7 +87,7 @@ export function TiersUpdate() {
             judicial_status: formData.judicial_status,
             active: formData.active,
         };
-        console.log(newObject);
+        
 
         try {
             const response = await fetch(`https://guilbaud.alwaysdata.net/api/tier/update/` + params.tierid, {

@@ -13,7 +13,7 @@ export function Admin() {
       const address = "https://guilbaud.alwaysdata.net/api/users/details";
       const response = await fetch(address);
       const data = await response.json();
-      console.log(data);
+      
       setUsers(data);
     } catch (error) {
       console.error(error);

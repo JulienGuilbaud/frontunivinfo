@@ -7,7 +7,7 @@ export function AuthProvider({ children }) {
     const [user, setUser] = useState(() => { // Ici je crée un état local avec useState qui contient les informations de l'utilisateur authentifié et setUser pour mettre à jour cet état
         const token = localStorage.getItem('token'); // Je récupère le token créer à la connexion de l'utilisateur dans le local storage
         const decodedToken = token ? jwt.decode(token) : null; // Je vérifie si un token existe, s'il existe je le décode avec jwt.decode
-        console.log('Decoded Token:', decodedToken);
+        //console.log('Decoded Token:', decodedToken);
         return decodedToken;
     });
 

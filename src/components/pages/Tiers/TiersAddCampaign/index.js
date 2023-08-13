@@ -20,7 +20,7 @@ export function TiersAddCampaigns() {
             const response = await fetch(address);
             const data = await response.json();
             setCampaignData(data);
-            console.log(data);
+            
         } catch (error) {
             console.error(error);
             alert('Erreur lors de la récupération des résultats');

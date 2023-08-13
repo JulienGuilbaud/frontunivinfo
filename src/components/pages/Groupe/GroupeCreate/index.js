@@ -39,7 +39,7 @@ export function GroupeCreate() {
             edit: formData.edit,
             suppress: formData.suppress,
         };
-        console.log(newObject);
+        
 
                 try {
                     const response = await fetch('https://guilbaud.alwaysdata.net/api/group/creategroup', {

@@ -24,7 +24,7 @@ export function UserCreate() {
             const response = await fetch(address);
             const data = await response.json();
             setGroupeData(data);
-            console.log(data);
+            
         } catch (error) {
             console.error(error);
             alert('Erreur lors de la récupération des résultats');
@@ -56,7 +56,7 @@ export function UserCreate() {
             email: formData.email,
             groupe_id: formData.groupe_id,
         };
-        console.log(newObject);
+        
 
 
         try {

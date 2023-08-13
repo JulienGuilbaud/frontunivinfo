@@ -14,7 +14,7 @@ import { useAuth } from '../../AuthContext.js';
 export function Header() {
 
         const userName = useAuth();
-        console.log(userName);
+        
 
         const doDisconnect = async () => {
                 try {

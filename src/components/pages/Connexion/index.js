@@ -35,7 +35,7 @@ export function Connexion() {
             password: formData.password,
             email: formData.email
         };
-        console.log(newObject);
+        
 
         try {
             const response = await fetch('https://guilbaud.alwaysdata.net/api/login', {

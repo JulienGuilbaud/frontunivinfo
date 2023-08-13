@@ -25,7 +25,7 @@ export function ExchangeHome() {
             const response = await fetch(address);
             const data = await response.json();
             setSearchResult(data);
-            console.log(data);
+            
         } catch (error) {
             console.error(error);
             alert('La recherche ne peut pas etre vide');

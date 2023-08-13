@@ -26,7 +26,7 @@ export function CampaignHome() {
             const response = await fetch(address);
             const data = await response.json();
             setSearchResult(data);
-            console.log(data);
+            
         } catch (error) {
             console.error(error);
             alert('Erreur lors de la récupération des résultats');

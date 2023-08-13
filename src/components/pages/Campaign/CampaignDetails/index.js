@@ -20,7 +20,7 @@ export function CampaignDetails() {
             const response = await fetch(address);
             const data = await response.json();
             setCampaignData(data);
-            console.log(data);
+            
 
         } catch (error) {
             console.error(error);
