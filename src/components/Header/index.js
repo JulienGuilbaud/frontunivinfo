@@ -14,11 +14,11 @@ import { useAuth } from '../../AuthContext.js';
 export function Header() {
 
         const userName = useAuth();
-        
+
 
         const doDisconnect = async () => {
                 try {
-                        await localStorage.removeItem("token");
+                        localStorage.removeItem("token");
                         alert('Vous êtes bien déconnecté');
                         window.location.replace(`/`)
                 }
@@ -55,9 +55,9 @@ export function Header() {
                                 <div >
                                         <ul className='header-box'>
                                                 <li >
-                                                        <Link  to="/profil" className="header-item-tag"><img className='header-item-img' src={profil_icone} alt="" />
+                                                        <Link to="/profil" className="header-item-tag"><img className='header-item-img' src={profil_icone} alt="" />
                                                                 <span id="votre-profil">Votre profil</span>
-                                                                <span  className=''>{userName.user.lastname} {userName.user.firstname}</span></Link>
+                                                                <span className=''>{userName.user.lastname} {userName.user.firstname}</span></Link>
                                                 </li>
                                                 <li>
                                                         <button onClick={doDisconnect} className='header-item-tag'><img className='header-item-img' src={deconnexion_icone} />Déconnexion</button>
@@ -68,4 +68,4 @@ export function Header() {
                         </header>
                 </>
         )
-        }
+}
