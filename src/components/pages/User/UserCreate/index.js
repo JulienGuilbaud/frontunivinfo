@@ -1,10 +1,12 @@
 import { useState, useEffect } from "react";
-import { useParams } from "react-router";
+import { Link } from "react-router-dom";
 import { Header } from "../../../Header";
 import { Main } from "../../../Main";
 import { Footer } from "../../../Footer";
 
 export function UserCreate() {
+    const [formAlert, setFormAlert] = useState(false)
+    const [newForm, setNewForm] = useState({})
     const [groupeData, setGroupeData] = useState([]);
 
     
@@ -72,16 +74,16 @@ export function UserCreate() {
                 const errorResponse = await response.json();
                 throw new Error(errorResponse.error);
             }
-
+            setNewForm({})
             const data = await response.json();
-
-            alert(data.message);
-
-            window.location.replace(`/administrateur` );
-
+            setNewForm(data)
+            const formMessages = document.getElementById('form-messages');
+            formMessages.classList.toggle("good-message")
+            formMessages.innerText = data.message;
+            setFormAlert(true)
         } catch (error) {
             const formMessages = document.getElementById('form-messages');
-            formMessages.classList.add("error-message")
+            formMessages.classList.toggle("error-message")
             formMessages.innerText = error;
         }
     };
@@ -97,7 +99,9 @@ export function UserCreate() {
                 <form onSubmit={handleSubmit} className="formInput-container">
                     <fieldset className="formInput-box">
                         <legend>formulaire création utilisateur</legend>
-                        <div className="" id="form-messages" aria-live="polite"></div>
+                        <div aria-live="polite" id="form-messages" className="">
+                            {formAlert && <Link to={"/administrateur"}> vers la page administrateur</Link>}
+                        </div>
                         <label className="formInput-card">
                             Nom :
                             <input type="text" name="lastname" value={formData.lastname} onChange={handleChange} className="formInput-item" />

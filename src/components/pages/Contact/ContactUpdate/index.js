@@ -3,6 +3,7 @@ import { Main } from "../../../Main";
 import { Footer } from "../../../Footer";
 import { useState, useEffect } from "react";
 import { useParams,Link } from "react-router-dom";
+import {DeleteButton} from "../../../DeleteButton"
 
 
 export function ContactUpdate() {
