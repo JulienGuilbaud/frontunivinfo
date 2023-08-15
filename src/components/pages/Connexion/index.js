@@ -71,9 +71,9 @@ export function Connexion() {
     return (
         <>
             <header className="header-connexion-container" role="banner">
-                <section className="connexion-container" role="region">
+                
                     <h1 className="connexion-title">Nom du logiciel</h1>
-                </section>
+                
             </header>
             <main className="main-connexion-container" role="main">
                 <section className="connexion-container" role="region">

@@ -1,15 +1,5 @@
 @use'./color.scss';
 
-.main-container {
-    padding: 20px;
-    background-color: color.$background-color;
-    color: color.$text-color;
-}
-
-.main-box {
-    border: 1px solid color.$primary-color;
-    border-radius: 5px;
-}
 
 .details-container {
     display: flex;

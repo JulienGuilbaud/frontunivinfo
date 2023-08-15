@@ -1,0 +1,16 @@
+@use'../../styles/color.scss';
+
+.main-container {
+    padding: 0.25rem;
+    background-color: color.$background-color;
+    color: color.$text-color;
+}
+.main-item-title{
+    font-size: 1.2em;
+    font-weight: bolder;
+}
+
+.main-box {
+    border: 0.15rem solid color.$primary-color;
+    border-radius: 5%;
+}

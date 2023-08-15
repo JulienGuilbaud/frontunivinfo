@@ -10,24 +10,30 @@
     margin: 4rem 2rem;
 }
 .formSearch-item-button , .formSearch-item-input{
-    // style v1.2
+  
     width: 100%;
     margin: auto;
-    //
     margin-top: 2rem;
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px;
     font-size: 1.1em;
     padding: 0.5em 1em;
     border-radius: 9px;
 }
+.formSearch-item-legend{
+font-size: 1.2em;
+font-weight: bolder;
+
+}
 
 .formSearch-item-button{
 
-    background-color: #ab81e5;
+    background-color: #5f0dd1;
+    color: white;
 }
 .formSearch-item-button:hover {
     cursor: pointer;
     box-shadow: 2.5px 9px 10px rgba(0, 0, 0, 0.765);
     background-color: #8b44ee;
+    color:white;
     transform: scale(1.2);
 }

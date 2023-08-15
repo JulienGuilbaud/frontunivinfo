@@ -1,4 +1,4 @@
-
+import './style.scss';
 export function Main ({title, children}) {
     return( 
     <>

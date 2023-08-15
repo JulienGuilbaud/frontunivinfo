@@ -5,7 +5,7 @@ export function FormSearch({ title,action,value,controlevalue }) {
         <>
             <form className='formSearch-container' onSubmit={action}>
                 <fieldset className="formSearch-box">
-                    <legend>Recherche</legend>
+                    <legend className="formSearch-item-legend">Recherche</legend>
                     <article className="formSearch-card">
                         
                         <label><h2>{title}</h2>

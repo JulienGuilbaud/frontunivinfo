@@ -1,3 +1,4 @@
+import './style.scss';
 import { Link } from 'react-router-dom';
 import { useEffect,useState } from 'react';
 import tiers_icone from "../../images/tiers.png";
@@ -6,8 +7,6 @@ import transfert_icone from "../../images/transfert.png";
 import profil_icone from "../../images/user.png";
 import accueil_icone from "../../images/accueil.png";
 import deconnexion_icone from "../../images/deconnexion.png";
-
-import './style.scss';
 import { SkipLink } from '../SkipLink';
 import { useAuth } from '../../AuthContext.js';
 
