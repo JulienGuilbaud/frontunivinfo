@@ -120,7 +120,7 @@ export function ContactUpdate() {
         try {
             await fetch(`https://guilbaud.alwaysdata.net/api/contact/delete/` + params.contactId, {method:'DELETE'});
             alert('Contact a été supprimé');
-            window.location.replace(`/tiersHome`)
+            
         }
         catch (error) {
             console.error(error); 
@@ -193,7 +193,9 @@ export function ContactUpdate() {
             </fieldset>
             </form>
             <div className="container-btn-suppress">
-                    <button className="item-btn-supress" onClick={doDelete}>Supprimer le contact</button>
+            <Link to={"/tiersHome"}>
+            <button className="item-btn-supress" onClick={doDelete}>Supprimer le contact</button>
+            </Link>
             </div>
             </Main>
             <Footer />
