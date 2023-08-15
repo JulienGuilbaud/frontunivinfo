@@ -194,7 +194,7 @@ export function ContactUpdate() {
             </form>
             <div className="container-btn-suppress">
             <Link to={"/tiersHome"}>
-            <button className="item-btn-supress" onClick={doDelete}>Supprimer le contact</button>
+                <DeleteButton action={doDelete} value={"supprimer ce contact"}/>
             </Link>
             </div>
             </Main>

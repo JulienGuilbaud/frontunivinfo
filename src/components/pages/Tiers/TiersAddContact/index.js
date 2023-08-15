@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useParams,Link } from "react-router-dom";
 import { Footer } from "../../../Footer"
 import { Header } from "../../../Header"
 import { Main } from "../../../Main"
@@ -8,6 +8,8 @@ import { Main } from "../../../Main"
 
 
 export function TiersAddContact() {
+    const [formAlert, setFormAlert] = useState(false)
+    const [newForm, setNewForm] = useState({})
     const [ContactData, setContactData] = useState([]);
     const params = useParams()//permet de récupéré notre id de l'url
     //on fabrique un objet vide avec nos attributs de table (a configurer)
@@ -68,14 +70,17 @@ export function TiersAddContact() {
                 throw new Error(errorResponse.error);
             }
 
+            setNewForm({})
             const data = await response.json();
-
-            alert(data.message);
-
-            window.location.replace(`/tiersDetails/` + params.tierid);
+            setNewForm(data)
+            console.log(data);
+            const formMessages = document.getElementById('form-messages');
+            formMessages.classList.toggle("good-message")
+            formMessages.innerText = data.message;
+            setFormAlert(true)
         } catch (error) {
             const formMessages = document.getElementById('form-messages');
-            formMessages.classList.add("error-message")
+            formMessages.classList.toggle("error-message")
             formMessages.innerText = error;
         }
     };
@@ -91,7 +96,9 @@ export function TiersAddContact() {
                 <form onSubmit={handleSubmit} className="formInput-container">
                     <fieldset className="formInput-box">
                         <legend> sélection d'un contact </legend>
-                        <div aria-live="polite" id="form-messages" className=""></div>
+                        <div aria-live="polite" id="form-messages" className="">
+                            {formAlert && <Link to={"/tiersDetails/"+params.tierid}> vers tout les détails de ce tier</Link>}
+                        </div>
                         <label className="formInput-card">
                             Contact :
                             <select name="ContactId" className="formInput-item" value={formData.ContactId} onChange={handleChange}>

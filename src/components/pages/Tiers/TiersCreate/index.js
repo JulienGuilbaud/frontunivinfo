@@ -2,9 +2,12 @@ import { useState } from "react";
 import { Footer } from "../../../Footer";
 import { Header } from "../../../Header";
 import { Main } from "../../../Main";
+import { Link } from "react-router-dom";
 
 
 export function TiersCreate() {
+    const [formAlert, setFormAlert] = useState(false)
+    const [newForm, setNewForm] = useState({})
     //on fabrique un objet vide avec nos attributs de table (a configurer)
     const [formData, setFormData] = useState({
         social_reason: '',
@@ -71,19 +74,22 @@ export function TiersCreate() {
                 body: JSON.stringify(newObject),
             });
 
+            
             if (!response.ok) {
                 const errorResponse = await response.json();
                 throw new Error(errorResponse.error);
             }
-
+            setNewForm({})
             const data = await response.json();
-
-            alert(data.message);
-
-            window.location.replace('/tiersDetails/'+data.tier.id);
+            setNewForm(data)
+            console.log(data);
+            const formMessages = document.getElementById('form-messages');
+            formMessages.classList.toggle("good-message")
+            formMessages.innerText = data.message;
+            setFormAlert(true)
         } catch (error) {
             const formMessages = document.getElementById('form-messages');
-            formMessages.classList.add("error-message")
+            formMessages.classList.toggle("error-message")
             formMessages.innerText = error;
         }
     }
@@ -96,7 +102,9 @@ export function TiersCreate() {
                     <fieldset className="formInput-box">
                         <legend>formulaire création tier</legend>
 
-                        <div aria-live="polite" id="form-messages" className=""></div>
+                        <div aria-live="polite" id="form-messages" className="">
+                            {formAlert && <Link to={"/tiersDetails/" +newForm.tier.id}> vers tout les détails de ce tier</Link>}
+                        </div>
 
                         <label className="formInput-card">
                             Raison sociale :
@@ -186,7 +194,7 @@ export function TiersCreate() {
                         </label>
 
 
-                        <button type="submit" className="formSearch-item-button">Créer Objet</button>
+                        <button type="submit" className="formSearch-item-button">Créer un nouveau tier</button>
 
                     </fieldset>
                 </form>

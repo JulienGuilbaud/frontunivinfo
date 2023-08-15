@@ -2,10 +2,12 @@ import { Header } from "../../../Header";
 import { Main } from "../../../Main";
 import { Footer } from "../../../Footer";
 import { useState, useEffect } from "react";
-import { useParams,Navigate } from "react-router-dom";
+import { useParams,Link } from "react-router-dom";
 import { DeleteButton } from "../../../DeleteButton";
 
 export function TiersUpdate() {
+    const [formAlert, setFormAlert] = useState(false)
+    const [newForm, setNewForm] = useState({})
     //je récupére les données de la table tier
     const params = useParams();
     const [tiersData, setTiersData] = useState({});
@@ -46,7 +48,7 @@ export function TiersUpdate() {
             naf: tiersData.naf || '',
             vat: tiersData.vat || '',
             commercial_register: tiersData.commercial_register || '',
-            staff: tiersData.staff || '',
+            staff: tiersData.staff || 0,
             judicial_status: tiersData.judicial_status || '',
             actif: tiersData.actif || '',
         })
@@ -103,14 +105,17 @@ export function TiersUpdate() {
                 throw new Error(errorResponse.error);
             }
 
+            setNewForm({})
             const data = await response.json();
-
-            alert(data.message);
-
-            window.location.replace(`/tiersDetails/` + params.tierid);
+            setNewForm(data)
+            console.log(data);
+            const formMessages = document.getElementById('form-messages');
+            formMessages.classList.toggle("good-message")
+            formMessages.innerText = data.message;
+            setFormAlert(true)
         } catch (error) {
             const formMessages = document.getElementById('form-messages');
-            formMessages.classList.add("error-message")
+            formMessages.classList.toggle("error-message")
             formMessages.innerText = error;
         }
     };
@@ -119,7 +124,7 @@ export function TiersUpdate() {
         try {
             await fetch(`https://guilbaud.alwaysdata.net/api/tier/delete/` + params.tierid, { method: 'DELETE' });
             alert('Tiers supprimé');
-            window.location.replace(`/tiersHome`)
+            
         }
         catch (error) {
             console.error(error);
@@ -133,7 +138,9 @@ export function TiersUpdate() {
                 <form onSubmit={handleSubmit} className="formInput-container">
                     <fieldset className="formInput-box">
                         <legend>Formulaire de modifications</legend>
-                        <div aria-live="polite" id="form-messages" className=""></div>
+                        <div aria-live="polite" id="form-messages" className="">
+                            {formAlert && <Link to={"/tiersDetails/"+params.tierid}> vers tout les détails de ce tier</Link>}
+                        </div>
                         <label className="formInput-card">
                             Raison sociale :
                             <input required type="text" name="social_reason" value={formData.social_reason} onChange={handleChange} className="formInput-item" />
@@ -224,7 +231,9 @@ export function TiersUpdate() {
                     </fieldset>
                 </form>
 
-                <DeleteButton value={"Supprimer ce Tier"}/>
+            <Link to={"/tiersHome"}>
+                <DeleteButton action={doDelete} value={"supprimer ce tier"}/>
+            </Link>
 
 
             </Main>

@@ -3,7 +3,7 @@ import { Main } from "../../Main";
 import { useAuth } from '../../../AuthContext.js';
 
 export function Profil() {
-    const userName = useAuth();
+    const userName =  useAuth();
     
     const getYesOrNo = (value) => (value ? "Oui" : "Non");
 

@@ -81,7 +81,7 @@ export function ExchangeCreate() {
             setFormAlert(true)
         } catch (error) {
             const formMessages = document.getElementById('form-messages');
-            formMessages.classList.add("error-message")
+            formMessages.classList.toggle("error-message")
             formMessages.innerText = error;
         }
     };

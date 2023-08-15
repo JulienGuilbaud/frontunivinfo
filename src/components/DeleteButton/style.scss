@@ -4,34 +4,16 @@
     display:flex;
     justify-content: center;
     align-items: center;
-    margin-bottom: 15px;
 }
 
 .delete-button-item {
     background-color:color.$warning-background-color;
-    color:white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
+    color:color.$color-white;
+    font-weight: bolder;
+    font-size: 1rem;
+    padding: 1.5rem;
 }
 
-.container-btn-suppress {
-    display:flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 15px;
-}
 
-.item-btn-supress {
-    background-color:color.$warning-background-color;
-    color:white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
 
  
