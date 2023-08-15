@@ -3,8 +3,10 @@
   "version": "1.0.0",
   "description": "",
   "source": "src/index.html",
+  "type": "module",
   "scripts": {
-    "start": "parcel",
+    "start": "rm -rf .parcel-cache dist && parcel",
+    "clear": "rm -rf .parcel-cache dist",
     "build": "parcel build"
   },
   "keywords": [],
