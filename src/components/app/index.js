@@ -1,6 +1,6 @@
 import { AuthProvider } from "../../AuthContext";
 import * as React from "react";
-import * as ReactDOM from "react-dom/client";
+
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Connexion } from '../pages/Connexion';
 import { Home } from '../pages/Home';

@@ -76,7 +76,7 @@ export function Connexion() {
                 
             </header>
             <main className="main-connexion-container" role="main">
-                <section className="connexion-container" role="region">
+                <section className="connexion-container" >
                     <h2 className="connexion-title">Authentification</h2>
 
                     <form onSubmit={handleSubmit} className="formInput-container">
