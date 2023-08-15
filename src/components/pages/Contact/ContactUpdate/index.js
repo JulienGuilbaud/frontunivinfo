@@ -2,10 +2,12 @@ import { Header } from "../../../Header";
 import { Main } from "../../../Main";
 import { Footer } from "../../../Footer";
 import { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useParams,Link } from "react-router-dom";
 
 
 export function ContactUpdate() {
+    const [formAlert, setFormAlert] = useState(false)
+    const [newForm, setNewForm] = useState({})
     //je récupère les données de la table Contact
     const params = useParams();
     const [contactData, setContactData] = useState({});
@@ -95,15 +97,20 @@ export function ContactUpdate() {
                 
             }
     
+            setNewForm({})
             const data = await response.json();
+            console.log(data);
+            setNewForm(data)
+            const formMessages = document.getElementById('form-messages');
             
-            alert('Contact a été modifié');
-    
-            window.location.replace(`/contactDetails/` + params.contactId);
+            formMessages.classList.toggle("good-message")
+            formMessages.innerText = data.message;
+            setFormAlert(true)
         } catch (error) {
             
             const formMessages = document.getElementById('form-messages');
-            formMessages.classList.add("error-message")
+            
+            formMessages.classList.toggle("error-message")
             formMessages.innerText = error;
 
         }
@@ -128,7 +135,9 @@ export function ContactUpdate() {
             <form onSubmit={handleSubmit} className="formInput-container">
                     <fieldset className="formInput-box">
                         <legend>Formulaire de modifications du contact</legend>
-                        <div aria-live="polite" id="form-messages" className=""></div>
+                        <div aria-live="polite" id="form-messages" className="">
+                            {formAlert && <Link to={"/contactDetails/"+newForm.contact.id}> vers tout les détails de ce contact</Link>}
+                        </div>
 
                         <label className="formInput-card">
                             Civilité :

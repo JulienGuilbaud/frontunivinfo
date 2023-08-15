@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useParams,Link } from "react-router-dom";
 import { Footer } from "../../../Footer"
 import { Header } from "../../../Header"
 import { Main } from "../../../Main"
@@ -8,6 +8,8 @@ import { Main } from "../../../Main"
 
 
 export function ContactAddTiers() {
+    const [formAlert, setFormAlert] = useState(false)
+    const [newForm, setNewForm] = useState({})
     const [TierData, setTierData] = useState([]);
     const params = useParams()//permet de récupéré notre id de l'url
     //on fabrique un objet vide avec nos attributs de table (a configurer)
@@ -70,10 +72,12 @@ export function ContactAddTiers() {
             }
 
             const data = await response.json();
-
-            alert(data.message);
-
-            window.location.replace(`/contactDetails/` + params.contactId);
+            console.log(data);
+            setNewForm(data)
+            const formMessages = document.getElementById('form-messages');
+            formMessages.classList.toggle("good-message")
+            formMessages.innerText = data.message;
+            setFormAlert(true)
         } catch (error) {
             
             const formMessages = document.getElementById('form-messages');
@@ -96,7 +100,9 @@ return (
                 <fieldset className="formInput-box">
                     <legend> sélection d'un tier </legend>
 
-                    <div aria-live="polite" id="form-messages" className=""></div>
+                    <div aria-live="polite" id="form-messages" className="">
+                            {formAlert && <Link to={"/contactDetails/"+params.contactId}> vers tout les détails de ce contact</Link>}
+                        </div>
 
                     <label className="formInput-card">
                         Tier :

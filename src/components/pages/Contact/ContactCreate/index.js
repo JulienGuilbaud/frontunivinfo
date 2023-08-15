@@ -2,10 +2,12 @@ import { useState } from "react";
 import { Header } from "../../../Header";
 import { Main } from "../../../Main";
 import { Footer } from "../../../Footer";
-import { useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 export function ContactCreate() {
-    const params = useParams();
+    const [formAlert, setFormAlert] = useState(false)
+    const [newForm, setNewForm] = useState({})
+   
     const [formData, setFormData] = useState({
         title: '',
         firstname: '',
@@ -62,20 +64,25 @@ export function ContactCreate() {
 
             if (!response.ok) {
                 const errorResponse = await response.json();
+                console.log(errorResponse);
                 throw new Error(errorResponse.error);
                 
             }
-
+           
+            setNewForm({})
             const data = await response.json();
-
-            alert(data.message);
-
-            window.location.replace(`/contactDetails/` + data.contact.id);
-
+            console.log(data);
+            setNewForm(data)
+            const formMessages = document.getElementById('form-messages');
+            
+            formMessages.classList.toggle("good-message")
+            formMessages.innerText = data.message;
+            setFormAlert(true)
         } catch (error) {
             
             const formMessages = document.getElementById('form-messages');
-            formMessages.classList.add("error-message")
+            
+            formMessages.classList.toggle("error-message")
             formMessages.innerText = error;
 
         }
@@ -90,7 +97,9 @@ export function ContactCreate() {
                     <fieldset className="formInput-box">
                         <legend>formulaire création contact</legend>
 
-                        <div aria-live="polite" id="form-messages" className=""></div>
+                        <div aria-live="polite" id="form-messages" className="">
+                            {formAlert && <Link to={"/contactDetails/"+newForm.contact.id}> vers tout les détails de ce contact</Link>}
+                        </div>
 
                         <label className="formInput-card">
                             Civilité :
