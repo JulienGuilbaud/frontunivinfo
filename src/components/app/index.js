@@ -14,7 +14,7 @@ import { ContactUpdate } from '../pages/Contact/ContactUpdate';
 import { CampaignHome } from '../pages/Campaign/CampaignHome';
 import { CampaignCreate } from '../pages/Campaign/CampaignCreate';
 import { CampaignDetails } from '../pages/Campaign/CampaignDetails';
-import { CampaignUpdate } from '../pages/Campaign/CampaignUpdate';
+
 import { ExchangeHome } from '../pages/Exchange/ExchangeHome';
 import { ExchangeCreate } from '../pages/Exchange/ExchangeCreate';
 import { ExchangeDetails } from '../pages/Exchange/ExchangeDetails';
@@ -57,7 +57,7 @@ export function App() {
                             <Route path='/campaignHome' element={<CampaignHome />} />
                             <Route path='/campaignCreate' element={<CampaignCreate />} />
                             <Route path='/campaignDetails/:id' element={<CampaignDetails />} />
-                            <Route path='/campaignUpdate' element={<CampaignUpdate />} />
+                            
 
                             <Route path='/exchangeHome' element={<ExchangeHome />} />
                             <Route path='/exchangeCreate/:contactid' element={<ExchangeCreate />} />

@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 import { useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { Footer } from '../../../Footer';
-import { DeleteButton } from "../../../DeleteButton";  
+
 
 export function ContactDetails() { 
     const params = useParams()//permet de récupéré notre id de l'url 

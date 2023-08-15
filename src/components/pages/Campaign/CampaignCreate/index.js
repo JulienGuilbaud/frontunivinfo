@@ -33,6 +33,7 @@ export function CampaignCreate() {
 
 
         try {
+            
             const response = await fetch('https://guilbaud.alwaysdata.net/api/campaign/create', {
                 method: 'POST',
                 headers: {
@@ -45,9 +46,8 @@ export function CampaignCreate() {
                 const errorResponse = await response.json();
                 throw new Error(errorResponse.error);
             }
-
+            setNewForm({})
             const data = await response.json();
-
             setNewForm(data)
             const formMessages = document.getElementById('form-messages');
             formMessages.classList.toggle("good-message")

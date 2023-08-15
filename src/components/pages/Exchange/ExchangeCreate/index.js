@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { useParams,Link } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 import { Header } from "../../../Header";
 import { Main } from "../../../Main";
 import { Footer } from "../../../Footer";
@@ -72,9 +72,8 @@ export function ExchangeCreate() {
                 const errorResponse = await response.json();
                 throw new Error(errorResponse.error);
             }
-
+            setNewForm({})
             const data = await response.json();
-
             setNewForm(data)
             const formMessages = document.getElementById('form-messages');
             formMessages.classList.toggle("good-message")
@@ -100,7 +99,7 @@ export function ExchangeCreate() {
                     <fieldset className="formInput-box">
                         <legend> création d'un échange avec {exchangeData.title} {exchangeData.lastname}</legend>
                         <div aria-live="polite" id="form-messages" className="">
-                            {formAlert && <Link to={"/exchangeDetails/"+newForm.contact.ContactId}> vers tout les échanges de ce contact</Link>}
+                            {formAlert && <Link to={"/exchangeDetails/" + newForm.contact.ContactId}> vers tout les échanges de ce contact</Link>}
                         </div>
                         <label className="formInput-card">
                             Contenu :
