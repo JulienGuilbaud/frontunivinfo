@@ -1,39 +1,18 @@
+.formSearch-container{
+    margin: 0.5rem;
+}
 .formSearch-box{
-    width: 90%;
-    margin: auto;
-    margin-top: 2rem;
-    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px;
-    background-color: white;
-    border-radius: 15px;
+    margin: 0.5rem; 
 }
 .formSearch-card{
-    margin: 4rem 2rem;
+    margin: 0.5rem; 
 }
-.formSearch-item-button , .formSearch-item-input{
-  
-    width: 100%;
-    margin: auto;
-    margin-top: 2rem;
-    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px;
-    font-size: 1.1em;
-    padding: 0.5em 1em;
-    border-radius: 9px;
-}
-.formSearch-item-legend{
-font-size: 1.2em;
-font-weight: bolder;
-
-}
-
-.formSearch-item-button{
-
-    background-color: #5f0dd1;
-    color: white;
-}
-.formSearch-item-button:hover {
-    cursor: pointer;
-    box-shadow: 2.5px 9px 10px rgba(0, 0, 0, 0.765);
-    background-color: #8b44ee;
-    color:white;
-    transform: scale(1.2);
+.formSearch-item{
+    margin: 0.5rem;
+    &-input{
+        margin: 0.5rem;
+    } 
+    &-button{
+        margin: 0.5rem;
+    }
 }
